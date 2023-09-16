@@ -1,0 +1,378 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: radial-gradient(#444cf7 0.5px, #ffffff 0.5px);
+    background-size: 10px 10px; 
+}
+.imagenes{
+    width: 350px;
+    height: 250px;
+    
+}
+
+.div_h .nav{
+    font-size: 30px;
+   text-align: end;
+    padding: 20px;
+    overflow: hidden;
+    box-shadow: 0 14px 28px rgba(150, 142, 142, 0.25), 
+      0 10px 10px rgb(255, 255, 255);
+      background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    
+} 
+
+ h1 {
+   
+    text-align: center;
+    background-color:rgb(243, 227, 227);
+    font-size: 40px;
+    margin: 0;
+    box-shadow: 0 14px 28px rgba(216, 211, 211, 0.25), 
+      0 10px 10px rgb(242, 234, 234);
+      background: rgb(224, 225, 239);
+}
+
+.div_p1{
+    background-color:white;
+    border-radius: 5px;
+    overflow: hidden; 
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+      0 10px 10px rgba(0,0,0,0.22);
+    padding: 40px;
+    margin-top: 10px;
+    background-color : transparent;
+}
+.div_p2{
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden; 
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+      0 10px 10px rgba(0,0,0,0.22);
+    padding: 40px;
+    margin-top: 10px;
+    background-color : transparent;
+  }
+.div_p3{
+    background-color:white;
+    border-radius: 5px;
+    overflow: hidden; 
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+      0 10px 10px rgba(0,0,0,0.22);
+    padding: 40px;
+    margin-top: 10px;
+    background-color : transparent;
+  }
+
+.contenedor{
+    width: 80%;
+    height: 100%;
+    margin-left: 150px;
+    border-radius: 3px;  
+}
+
+.div_p2 .vid{
+    text-align: center;
+    border: 5px;
+    background-color: white;
+}
+
+.boton{
+    background-color: blue;
+    font-size: 15px;
+	font-weight: bold;
+	padding: 12px 45px;
+	border-radius: 20px;
+	background-color: #d80f3e;
+	border: 1px solid #7b2238;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	transition: transform 20ms ease-in;
+    margin: 20px;
+}
+
+button:active {
+	transform: scale(0.95);
+}
+
+.botones{
+   text-align: center;
+}
+
+.imagen_vs{
+    text-align: center; 
+}
+.enlaces{
+    text-align: center;   
+}
+.enlaces .separ{
+    margin-right: 350px;
+    margin-top: 50px;
+    background-color: blue;
+    font-size: 15px;
+	font-weight: bold;
+	padding: 12px 45px;
+	border-radius: 20px;
+	background-color: #d80f3e;
+	border: 1px solid #7b2238;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	transition: transform 20ms ease-in;
+    margin: 20px;
+}
+
+.htmll{
+    position: relative;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;  
+}
+.htmll p{
+    background-color:white;
+    width: 45%;
+    height: 50%;
+}
+.htmll .imagenes{
+    
+    border-radius: 10px;
+    width: 30%;
+    height: 50%; 
+}
+
+.csss{
+    position: relative;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.csss p{
+    background-color:white;
+    width: 45%;
+    height: 50%;
+}
+.csss .imagenes{
+    border-radius: 10px;
+    width: 30%;
+    height: 50%; 
+}
+
+.jss{
+    position: relative;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+}
+.jss p{
+    background-color:white;
+    width: 45%;
+    height: 50%;
+}
+.jss .imagenes{
+    border-radius: 10px;
+    width: 30%;
+    height: 10%;
+}
+
+.udemy{
+    position: relative;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+}
+.udemy p{
+    width: 30%;  
+}
+.udemy .imagenes{
+    height: 75%;
+}
+
+.coursera{
+    position: relative;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+}
+.coursera p{
+    width: 20%;
+    height: 50%;
+}
+.coursera .imagenes{
+    height: 75%;
+}
+
+
+.botonn{
+    background-color: rgb(102, 31, 195);
+    font-size: 15px;
+	font-weight: bold;
+	padding: 12px 45px;
+	border-radius: 5px;
+	border: 1px solid #7b2238;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	transition: transform 20ms ease-in;
+    margin: 10px;
+}
+
+.prueba{
+    background-color:rgb(244, 196, 196);
+    position: absolute;
+    margin-top: 0%;
+    width: 20%;
+    height: 50%;
+    border-radius: 10px;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+.weather-content {
+    text-align: center;
+    background-color: #cfcfd9;
+    width: 10%;
+    border-radius: 10px;
+    position: absolute;
+}
+
+
+.weather-content p{
+    color: #cfcfd9;
+}
+.result{
+    border-radius: 10px;
+}
+
+.result h2{
+    font-size: 70px;
+    line-height: 70px;
+    margin: -10px 0 10px;
+    color: #fff;
+}
+.result h5{
+    font-size: 21px;
+    margin: 2px;
+    color: #fff;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+form input[type="text"], form input[type="submit"], form select{
+    width: 100%;
+    margin: 0px 0 25px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 3px #ddd;
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-family: 'Montserrat', sans-serif;
+}
+form input[type="submit"]{
+    width: 100%;
+    margin: 0 auto;
+    cursor: pointer;
+    background-color: #14d4a5;
+    border: 1px solid #14d4a5;
+    color: #fff;
+    font-weight: 600;
+    transition: width 1s;
+}
+form input[type="submit"]:hover{
+    width: 50%;
+}
+.alert-message {
+    margin: 24px 0 0;
+    color: red!important;
+}
+
+
+
+.weather-content h1{
+    font-size: 34px;
+    margin-bottom: 10px;
+    color: #FFF;
+    border-radius: 10PX;
+}
+
+
+.containerr{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.footer{
+    background-color: #3f3f3f;
+    padding: 80px 0;
+}
+.footer-row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer-links{
+    width: 25%;
+    padding: 0 15px;
+}
+.footer-links h4{
+    font-size: 20px;
+    color: #FFFFFF;
+    margin-bottom: 25px;
+    font-weight: 500;
+    border-bottom: 2px solid #00C3FF;
+    padding-bottom: 10PX;
+    display: inline-block;
+}
+.footer-links ul li a{
+    font-size: 18px;
+    text-decoration: "none";
+    color: #bbbbbb;
+    display: block;
+    margin-bottom: 15px;
+    transition: all .3s ease;
+}
+.footer ul li a:hover{
+    color: #FFFFFF;
+    padding-left: 6px;
+}
+
+
+*{
+    list-style: none;
+}
+
+
+.vid{
+    background-image: radial-gradient(#444cf7 0.5px, #ffffff 0.5px);
+    background-size: 10px 10px;
+}
+.htmll{
+    background-image: radial-gradient(#444cf7 0.5px, #ffffff 0.5px);
+    background-size: 10px 10px;
+}
+.csss{
+    background-image: radial-gradient(#444cf7 0.5px, #ffffff 0.5px);
+    background-size: 10px 10px;
+}
+.jss{
+    background-image: radial-gradient(#444cf7 0.5px, #ffffff 0.5px);
+    background-size: 10px 10px;
+}
+.udemy {
+    background-image: radial-gradient(#444cf7 0.5px, #ffffff 0.5px);
+    background-size: 10px 10px;
+}
+.coursera{
+    background-image: radial-gradient(#444cf7 0.5px, #ffffff 0.5px);
+    background-size: 10px 10px;
+}
