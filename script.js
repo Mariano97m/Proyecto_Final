@@ -1,78 +1,91 @@
-const result = document.querySelector('.result');
-const form = document.querySelector('.get-weather');
-const nameCity = document.querySelector('#city');
-const nameCountry = document.querySelector('#country');
+window.addEventListener('load', ()=> {
+    let lon
+    let lat
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
+    let temperaturaValor = document.getElementById('temperatura-valor')  
+    let temperaturaDescripcion = document.getElementById('temperatura-descripcion')  
+    
+    let ubicacion = document.getElementById('ubicacion')  
+    let iconoAnimado = document.getElementById('icono-animado') 
 
-    if (nameCity.value === '' || nameCountry.value === '') {
-        showError('Ambos campos son obligatorios...');
-        return;
+    let vientoVelocidad = document.getElementById('viento-velocidad') 
+
+
+    if(navigator.geolocation){
+       navigator.geolocation.getCurrentPosition( posicion => {
+           //console.log(posicion.coords.latitude)
+           lon = posicion.coords.longitude
+           lat = posicion.coords.latitude
+            //ubicación actual    
+           const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=04825f9813c6ee84acd54c94ea7a6ed2`
+
+           //ubicación por ciudad
+           //const url = `https://api.openweathermap.org/data/2.5/weather?q=Encarnacion&lang=es&units=metric&appid=04825f9813c6ee84acd54c94ea7a6ed2`
+
+           //console.log(url)
+
+           fetch(url)
+            .then( response => { return response.json()})
+            .then( data => {
+                //console.log(data)
+                
+                let temp = Math.round(data.main.temp)
+                //console.log(temp)
+                temperaturaValor.textContent = `${temp - 273} ° C`
+
+                //console.log(data.weather[0].description)
+                let desc = data.weather[0].description
+                temperaturaDescripcion.textContent = desc.toUpperCase()
+                ubicacion.textContent = data.name
+                
+                vientoVelocidad.textContent = `${data.wind.speed} m/s`
+                
+                //para iconos estáticos
+                //const urlIcon = `http://openweathermap.org/img/wn/${iconCode}.png`                     
+                //icono.src = urlIcon
+                //console.log(data.weather[0].icon)
+
+                //para iconos dinámicos
+                console.log(data.weather[0].main)
+                switch (data.weather[0].main) {
+                    case 'Thunderstorm':
+                      iconoAnimado.src='animated/thunder.svg'
+                      console.log('TORMENTA');
+                      break;
+                    case 'Drizzle':
+                      iconoAnimado.src='animated/rainy-2.svg'
+                      console.log('LLOVIZNA');
+                      break;
+                    case 'Rain':
+                      iconoAnimado.src='animated/rainy-7.svg'
+                      console.log('LLUVIA');
+                      break;
+                    case 'Snow':
+                      iconoAnimado.src='animated/snowy-6.svg'
+                        console.log('NIEVE');
+                      break;                        
+                    case 'Clear':
+                        iconoAnimado.src='animated/day.svg'
+                        console.log('LIMPIO');
+                      break;
+                    case 'Atmosphere':
+                      iconoAnimado.src='animated/weather.svg'
+                        console.log('ATMOSFERA');
+                        break;  
+                    case 'Clouds':
+                        iconoAnimado.src='animated/cloudy-day-1.svg'
+                        console.log('NUBES');
+                        break;  
+                    default:
+                      iconoAnimado.src='animated/cloudy-day-1.svg'
+                      console.log('por defecto');
+                  }
+
+            })
+            .catch( error => {
+                console.log(error)
+            })
+       })
+          
     }
-
-    callAPI(nameCity.value, nameCountry.value);
-    
 })
-
-function callAPI(city, country){
-    const apiId = '41d1d7f5c2475b3a16167b30bc4f265c';
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiId}`;
-
-    fetch(url)
-        .then(data => {
-            return data.json();
-        })
-        .then(dataJSON => {
-            if (dataJSON.cod === '404') {
-                showError('Ciudad no encontrada...');
-            } else {
-                clearHTML();
-                showWeather(dataJSON);
-            }
-            
-        })
-        .catch(error => {
-            console.log(error);
-        })
-}
-
-function showWeather(data){
-    const {name, main:{temp, temp_min, temp_max}, weather:[arr]} = data;
-
-    const degrees = kelvinToCentigrade(temp);
-    const min = kelvinToCentigrade(temp_min);
-    const max = kelvinToCentigrade(temp_max);
-
-    const content = document.createElement('div');
-    content.innerHTML = `
-        <h5>Clima en ${name}</h5>
-        <img src="https://openweathermap.org/img/wn/${arr.icon}@2x.png" alt="icon">
-        <h2>${degrees}°C</h2>
-        <p>Max: ${max}°C</p>
-        <p>Min: ${min}°C</p>
-    `;
-
-    result.appendChild(content);
-
-    
-}
-
-function showError(message){
-    const alert = document.createElement('p');
-    alert.classList.add('alert-message');
-    alert.innerHTML = message;
-
-    form.appendChild(alert);
-    setTimeout(() => {
-        alert.remove();
-    }, 3000);
-}
-
-function kelvinToCentigrade(temp){
-    return parseInt(temp - 273.15);
-}
-
-function clearHTML(){
-    result.innerHTML = '';
-}
